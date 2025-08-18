@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bald Brad Night™</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Big Sexy" />
+    <meta name="description" content="bald party website" />
     <meta name="keywords" content="Balding, Big Sexy, Bald Brad, Party, Hair, Buzzcut, Bars, Williamsburg" />
 
     <!-- Fonts -->
@@ -12,40 +13,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto&display=swap" rel="stylesheet" />
 
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/TODO.png" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
   </head>
   <body>
-    <div class="container">
-      <header>
-        <img src="assets/logo.png" alt="Logo" class="logo" />
-        <h1 class="main-title">Big Sexy Goes Bald</h1>
-        <h2>Bald Brad Night™</h2>
-        <p class="date">Friday, September 19 at 9pm · Williamsburg, NY</p>
-        <p class="tagline">Should Bradford take the poison pills or surrender to the baldness?<br>One dome. One decision. <strong>POLLS OPEN SEPT 15</strong>.</p>
-      </header>
+    <!-- Nav -->
+    <nav class="nav-bar">
+      <a href="index.html" class="active">Home</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="disclosure.html">Disclosure</a>
+    </nav>
 
-      <nav class="nav">
-        <a href="index.html" class="tab active">Home</a>
-        <a href="gallery.html" class="tab">Inspiration</a>
-        <a href="disclosure.html" class="tab">Dating Disclosure</a>
-      </nav>
+    <!-- Main Content -->
+    <main>
+      <img src="assets/logo.png" alt="Bald Night Logo" class="logo">
+      <h1 class="main-title">Big Sexy Goes Bald</h1>
+      <h2>Bald Brad Night™</h2>
+      <p class="event-date">Friday, September 19 · Williamsburg, NY</p>
 
-      <main>
-        <section>
-          <p>More details coming soon.</p>
-        </section>
-      </main>
-    </div>
-
-    <footer>
-      <div class="footer-animation">
-        <!-- TODO: Stick figure buzz cut animation goes here -->
-        <p class="footer-text">© 2025 Elderly Boy. Not many rights reserved.</p>
+      <div id="countdown">
+        <div class="time-box"><span id="days">00</span><label>Days</label></div>
+        <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
+        <div class="time-box"><span id="minutes">00</span><label>Minutes</label></div>
+        <div class="time-box"><span id="seconds">00</span><label>Seconds</label></div>
       </div>
+
+      <p class="tagline">Should Bradford take the poison pills or surrender to fate?<br>One dome. One decision. <strong>POLLS OPEN SEPT 15</strong>.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <img src="https://media0.giphy.com/media/l1J9CheH9K9gv66oo/giphy.gif" alt="Buzzcut animation" class="footer-gif" />
+      <p id="copyright">
+        © 2025 <a href="https://elderlyboy.com" target="_blank">Elderly Boy</a>. Not many rights reserved.
+      </p>
     </footer>
   </body>
 </html>
