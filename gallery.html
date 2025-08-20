@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Bald Brad Night™</title>
+<head>
+    <title>Bald Brad Night</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Big Sexy" />
@@ -13,136 +13,140 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto&display=swap" rel="stylesheet" />
 
-    <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/main.js"></script>
-
     <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css" />
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2f5efed02e.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png" />
   </head>
   <body>
-    <!-- Nav -->
+    <!-- Navigation -->
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <span>|</span>
-  <a href="gallery.html">Gallery</a>
-  <span>|</span>
-  <a href="disclosure.html">Disclosure</a>
-</nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="disclosure.html">Disclosure</a>
+    </nav>
 
+    <!-- Page Titles -->
+    <main>
+      <h1 class="main-title">Inspiration for the Evening</h1>
+      <h2>the heroes that made this party possible</h2>
 
-    <!-- Main content -->
-    <main class="pt-24">
-      <h1 class="text-3xl font-bold mb-1">Inspiration for the Evening</h1>
-      <h2 class="text-lg mb-8 text-gray-600">The heroes that made this party possible</h2>
+      <!-- Gallery Grid -->
+      <section class="gallery-grid">
+        <div class="gallery-card">
+          <h3 class="gallery-title">Larry David</h3>
+          <img src="https://media4.giphy.com/media/v0eHX3n28wvoQ/giphy.gif" alt="Larry David" />
+          <p class="gallery-caption">Social exit strategies expert and the icon behind this event.</p>
+        </div>
 
+        <div class="gallery-card">
+          <h3 class="gallery-title">Jason Statham</h3>
+          <img src="assets/jason_statham.webp" alt="Jason Statham" />
+          <p class="gallery-caption">I wish I could drive like him but I can look like him.</p>
+        </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Start of each figure -->
-      <div class="text-center">
-      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExb255NDhld3B1eXJibXU3amo0a250em54ajA3MnEwNzQzdXM3enNxNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v0eHX3n28wvoQ/giphy.gif" alt="Larry David" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Social exit strategies expert and the icon behind this event<br>“Do better? Do less.”</p>
-      </div>
+        <div class="gallery-card">
+          <h3 class="gallery-title">Mr. Clean</h3>
+          <img src="assets/mr_clean.webp" alt="Mr. Clean" />
+          <p class="gallery-caption">Built like a Magic Eraser.</p>
+        </div>
 
+        <div class="gallery-card">
+          <h3 class="gallery-title">Gollum</h3>
+          <img src="assets/gollum.jpeg" alt="Gollum" />
+          <p class="gallery-caption">Zero follicles but one ring...</p>
+        </div>
 
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/Ng1nmkyS7BkuEnQg7" alt="Jason Statham" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">I wish I could drive like him but I can look like him.</p>
-      </div>
+        <div class="gallery-card">
+          <h3 class="gallery-title">Jeff Bezos</h3>
+          <img src="assets/jeff_bezos.jpg" alt="Jeff Bezos" />
+          <p class="gallery-caption">From books to bald to BILLIONAIRE lets go to SPACE people!</p>
+        </div>
 
+        <div class="gallery-card">
+          <h3 class="gallery-title">Bald Brittney (2007)</h3>
+          <img src="assets/brittney.jpeg" alt="Bald Brittney" />
+          <p class="gallery-caption">The original bald party thrower.</p>
+        </div>
 
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/5ru1TZU4vPqGyDDJ7" alt="Mr. Clean" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Built like a Magic Eraser.</p>
-      </div>
+        <div class="gallery-card">
+          <h3 class="gallery-title">The Rock</h3>
+          <img src="assets/the_rock.jpg" alt="The Rock" />
+          <p class="gallery-caption">Baldness is 90% confidence, 10% baby oil.</p>
+        </div>
 
+        <div class="gallery-card">
+          <h3 class="gallery-title">Tilda Swinton</h3>
+          <img src="assets/tilda_swinton.webp" alt="Tilda Swinton" />
+          <p class="gallery-caption">Proof that losing hair is gaining power.</p>
+        </div>
 
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/LE4GgXQa51WZLExm6" alt="Gollum" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Zero follicles but one right</p>
-      </div>
+        <div class="gallery-card">
+          <h3 class="gallery-title">Homer Simpson</h3>
+          <img src="assets/homer_simpson.jpg" alt="Homer Simpson" />
+          <p class="gallery-caption">30 seasons of thinning.</p>
+        </div>
 
+        <div class="gallery-card">
+          <h3 class="gallery-title">Professor X</h3>
+          <img src="https://media0.giphy.com/media/d2YYgKpv8MnvF20M/giphy.gif" alt="Professor X" />
+          <p class="gallery-caption">Dude’s mind was focused on other things.</p>
+        </div>
 
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/W7pD3cZbeRpw32pFA" alt="Jeff Bezos" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">From books to bald to BILLIONAIRE lets go to Space people</p>
-      </div>
+        <div class="gallery-card">
+          <h3 class="gallery-title">Michael Jordan</h3>
+          <img src="assets/mj.jpeg" alt="Michael Jordan" />
+          <p class="gallery-caption">You can be bald and mean and successful.</p>
+        </div>
 
+        <div class="gallery-card">
+          <h3 class="gallery-title">Pitbull</h3>
+          <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa250MG5pZGc4cWI3azlybXR6cm83a2x6ZGNwZXVvMmdtam93M2czcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKT7gSMOT8Thtss/giphy.gif" alt="Pitbull" />
+          <p class="gallery-caption">He’s been bald all around the world!</p>
+        </div>
 
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/WNfGdogqhuvuqUBY6" alt="Bald Brittney" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">The original bald party thrower.</p>
-      </div>
+        <div class="gallery-card">
+          <h3 class="gallery-title">Walter White</h3>
+          <img src="https://media2.giphy.com/media/WQJ2DORvilpEk/giphy.gif" alt="Walter White" />
+          <p class="gallery-caption">Say my name...and pass the clippers.</p>
+        </div>
 
+        <div class="gallery-card">
+          <h3 class="gallery-title">Voldemort</h3>
+          <img src="assets/voldemort.webp" alt="Voldemort" />
+          <p class="gallery-caption">Bald doesn't hold you back from leadership roles.</p>
+        </div>
 
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/mTENNwnS5f5m3sWUA" alt="The Rock" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Baldness is 90% confidence, 10% baby oil.</p>
-      </div>
+        <div class="gallery-card">
+          <h3 class="gallery-title">Shrek</h3>
+          <img src="assets/shrek.webp" alt="Shrek" />
+          <p class="gallery-caption">Hey he owned property and married a princess.</p>
+        </div>
 
+        <div class="gallery-card">
+          <h3 class="gallery-title">Bald Meredith (The Office S9:E10)</h3>
+          <img src="assets/meredith.jpg" alt="Bald Meredith" />
+          <p class="gallery-caption">I don’t have lice, that's not why I’m having this party.</p>
+        </div>
 
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/mLBpCWt1RFS7FFsh6" alt="Tilda Swinton" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Proof that losing hair is gaining power.</p>
-      </div>
+        <div class="gallery-card">
+          <h3 class="gallery-title">Dr. Evil</h3>
+          <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3l0NnZiN3g1M2drZ29vZW15MzB3d2I3OWtjYmlmemF5ZTg4aXRuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BZlNhp9L5WINi/giphy.gif" alt="Dr. Evil" />
+          <p class="gallery-caption">Such a CUTIE.</p>
+        </div>
 
-
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/aiZLCaJuwJbUdVQx6" alt="Homer Simpson" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">30 seasons of thinning.</p>
-      </div>
-
-
-      <div class="text-center">
-      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTRyZWVzeWUwc3ZyMWUxdTZjMTV1dmg5OHZuNTF5aWQ3Ym15MmV4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d2YYgKpv8MnvF20M/giphy.gif" alt="Professor X" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Dude’s mind was focused on other things.</p>
-      </div>
-
-
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/ubJLpuPPNW1oDTpH6" alt="Michael Jordan" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">You can be bald and mean</p>
-      </div>
-
-
-      <div class="text-center">
-      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWV5NDc1aTM1c2xnNTBub200bmFiYTRic2gzdDFleXp0dTkwNWFobCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iDUKerBP5SynTxBO2u/giphy.gif" alt="Pitbull" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">He’s been bald everywhere</p>
-      </div>
-
-
-      <div class="text-center">
-      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDhmMnBwd2dzejhiOGQyam9iczV0cHFyZTFnanR6MzliaXFyM3d2eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WQJ2DORvilpEk/giphy.gif" alt="Walter White" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Say my name... and pass the clippers.</p>
-      </div>
-
-
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/gNraRpRHdpro6PYs8" alt="Voldemort" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">He had swag with the minimal robes look.</p>
-      </div>
-
-
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/Zs2Dor5WsKinYDp97" alt="Shrek" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Hey he owned property and got with a princess.</p>
-      </div>
-
-
-      <div class="text-center">
-      <img src="https://images.app.goo.gl/79yJ8P2bUvqaUWsU8" alt="Bald Meredith" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">I don’t have lice, that's not why I’m having this party.</p>
-      </div>
-
-
-      <div class="text-center">
-      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG5odTBwaHhnN2cxcGxpdnl1a2kydWF6NDhtMWd4bDZndmluM3ZyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11FoMMGGfJGE12/giphy.gif" alt="Bald is Beautiful" class="rounded-md w-full h-auto" />
-      <p class="mt-2 text-sm">Bald is Beautiful</p>
-      </div>
+        <div class="gallery-card standout-card">
+          <h3 class="gallery-title">Bald is Beautiful</h3>
+          <img src="https://media2.giphy.com/media/11FoMMGGfJGE12/giphy.gif" alt="Bald is Beautiful" />
+          <p class="gallery-caption">You get the point, thanks for scrolling.</p>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
