@@ -175,6 +175,42 @@ footer {
   text-decoration: underline;
 }
 
+/* 1. Large Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .footer-gif {
+    max-width: 90px;
+    margin-bottom: 1rem;
+  }
+
+  #copyright {
+    font-size: 1rem;
+  }
+}
+
+/* 2. Medium Laptop (between 700px and 1023px) */
+@media (min-width: 700px) and (max-width: 1023px) {
+  .footer-gif {
+    max-width: 70px;
+    margin-bottom: 0.75rem;
+  }
+
+  #copyright {
+    font-size: 0.9rem;
+  }
+}
+
+/* 3. Small Phone (max-width: 699px) */
+@media (max-width: 699px) {
+  .footer-gif {
+    max-width: 50px;
+    margin-bottom: 0.5rem;
+  }
+
+  #copyright {
+    font-size: 0.8rem;
+  }
+}
+
 /* ===================== */
 /* ===== GALLERY ======= */
 /* ===================== */
