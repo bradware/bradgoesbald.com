@@ -30,7 +30,7 @@ nav {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0; /* spacing will come from padding in the links */
+  gap: 0;
   font-size: 1.1rem;
   font-weight: 500;
   padding: 1rem;
@@ -51,7 +51,6 @@ nav a.active {
   color: #000;
 }
 
-/* Add vertical pipes between links */
 nav a:not(:last-child)::after {
   content: "|";
   position: absolute;
@@ -63,7 +62,7 @@ nav a:not(:last-child)::after {
   padding-left: 14px;
 }
 
-/* Responsive scaling */
+/* Responsive Nav */
 @media (max-width: 500px) {
   nav {
     font-size: 1rem;
@@ -84,11 +83,22 @@ nav a:not(:last-child)::after {
   }
 }
 
+.home-gif {
+  max-height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-/* Logo */
-.logo {
-  max-height: 150px;
-  width: auto;
+@media (min-width: 700px) and (max-width: 1023px) {
+  .home-gif {
+    max-height: 225px;
+  }
+}
+
+@media (max-width: 699px) {
+  .home-gif {
+    max-height: 175px;
+  }
 }
 
 /* Main Titles */
@@ -147,17 +157,21 @@ h2 {
 footer {
   background-color: #fdf8f2;
   border-top: 1px solid #ddd;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   text-align: center;
   position: sticky;
   bottom: 0;
   width: 100%;
 }
 
-.footer-gif {
-  max-width: 80px;
+.footer-logo {
   display: block;
-  margin: 0 auto 1rem;
+  max-width: 125px;
+  width: 100%;
+  margin: 0 auto 6px auto;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* light border */
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* subtle shadow */
 }
 
 /* Copyright */
@@ -175,11 +189,12 @@ footer {
   text-decoration: underline;
 }
 
-/* 1. Large Desktop (min-width: 1024px) */
+/* Responsive Footer Logo Sizes */
 @media (min-width: 1024px) {
-  .footer-gif {
-    max-width: 90px;
-    margin-bottom: 1rem;
+  .footer-logo {
+    max-width: 105px;
+    margin: 0 auto 6px auto;
+    padding-bottom: 0;
   }
 
   #copyright {
@@ -187,11 +202,11 @@ footer {
   }
 }
 
-/* 2. Medium Laptop (between 700px and 1023px) */
 @media (min-width: 700px) and (max-width: 1023px) {
-  .footer-gif {
-    max-width: 70px;
-    margin-bottom: 0.75rem;
+  .footer-logo {
+    max-width: 90px;
+    margin: 0 auto 5px auto;
+    padding-bottom: 0;
   }
 
   #copyright {
@@ -199,11 +214,11 @@ footer {
   }
 }
 
-/* 3. Small Phone (max-width: 699px) */
 @media (max-width: 699px) {
-  .footer-gif {
-    max-width: 50px;
-    margin-bottom: 0.5rem;
+  .footer-logo {
+    max-width: 75px;
+    margin: 0 auto 4px auto;
+    padding-bottom: 0;
   }
 
   #copyright {
@@ -249,7 +264,7 @@ footer {
   max-height: 300px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-title {
