@@ -170,12 +170,9 @@ footer {
 
 .footer-logo {
   display: block;
-  max-width: 125px;
+  max-width: 100px;
   width: 100%;
-  margin: 0 auto 6px auto;
-  border: 1px solid rgba(0, 0, 0, 0.1); /* light border */
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* subtle shadow */
+  margin: 0 auto 0 auto;
 }
 
 /* Copyright */
@@ -196,8 +193,7 @@ footer {
 /* Responsive Footer Logo Sizes */
 @media (min-width: 1024px) {
   .footer-logo {
-    max-width: 105px;
-    margin: 0 auto 6px auto;
+    max-width: 80px;
     padding-bottom: 0;
   }
 
@@ -206,22 +202,9 @@ footer {
   }
 }
 
-@media (min-width: 700px) and (max-width: 1023px) {
-  .footer-logo {
-    max-width: 90px;
-    margin: 0 auto 5px auto;
-    padding-bottom: 0;
-  }
-
-  #copyright {
-    font-size: 0.9rem;
-  }
-}
-
 @media (max-width: 699px) {
   .footer-logo {
-    max-width: 75px;
-    margin: 0 auto 4px auto;
+    max-width: 60px;
     padding-bottom: 0;
   }
 
