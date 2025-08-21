@@ -23,10 +23,6 @@ main {
   padding: 2rem 1rem 2rem 1rem;
 }
 
-.margin-offset {
-  margin-top: 25px;
-}
-
 /* Nav Bar */
 nav {
   display: flex;
@@ -159,8 +155,8 @@ h2 {
 }
 
 .tagline {
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 1.25rem;
+  font-weight: bold;
   font-style: normal;
   margin: 0;
   padding: 0;
