@@ -21,6 +21,9 @@ main {
   justify-content: center;
   text-align: center;
   padding: 2rem 1rem 2rem 1rem;
+}
+
+.margin-offset {
   margin-top: 25px;
 }
 
@@ -108,8 +111,14 @@ nav a:not(:last-child)::after {
   margin: 0;
 }
 
-h2 {
+h1 {
+  font-family: 'Dancing Script', cursive;
   font-size: 2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
   margin: 0;
 }
 
