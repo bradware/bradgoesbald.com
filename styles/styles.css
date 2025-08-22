@@ -154,12 +154,8 @@ h2 {
   line-height: 1;
 }
 
-.tagline {
-  font-size: 1.25rem;
-  font-weight: bold;
-  font-style: normal;
-  margin: 0;
-  padding: 0;
+.date-open {
+  margin-top: 0.25rem;
 }
 
 /* Footer */
