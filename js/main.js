@@ -14,8 +14,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
-// COUNTDOWN IS OVER
-// document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
+//   COUNTDOWN IS OVER
 //   const countdownEl = document.getElementById("countdown");
 //   const mainEl = document.querySelector("main");
 //   const eventDate = new Date("September 20, 2025 21:00:00 EDT").getTime();
@@ -49,42 +49,43 @@ const database = firebase.database();
 // updateCountdown();
 // const timer = setInterval(updateCountdown, 1000);
 
-// Voting
-const poisonCountEl = document.getElementById("poison-count");
-const baldCountEl   = document.getElementById("bald-count");
+  // Voting
+  const poisonCountEl = document.getElementById("poison-count");
+  const baldCountEl   = document.getElementById("bald-count");
 
-// Database references for each option
-const poisonRef = database.ref("votes/poison");
-const baldRef   = database.ref("votes/bald");
+  // Database references for each option
+  const poisonRef = database.ref("votes/poison");
+  const baldRef   = database.ref("votes/bald");
 
-// Helper to set count and fade it in the first time
-function setCount(el, value) {
-  el.textContent = value;
-  if (!el.classList.contains('visible')) {
-    // trigger CSS fade-in on first load
-    requestAnimationFrame(() => el.classList.add('visible'));
+  // Helper to set count and fade it in the first time
+  function setCount(el, value) {
+    el.textContent = value;
+    if (!el.classList.contains('visible')) {
+      // trigger CSS fade-in on first load
+      requestAnimationFrame(() => el.classList.add('visible'));
+    }
   }
-}
 
-// Load and stay synced in real time
-poisonRef.on("value", (snapshot) => {
-  setCount(poisonCountEl, snapshot.exists() ? snapshot.val() : 0);
-});
+  // Load and stay synced in real time
+  poisonRef.on("value", (snapshot) => {
+    setCount(poisonCountEl, snapshot.exists() ? snapshot.val() : 0);
+  });
 
-baldRef.on("value", (snapshot) => {
-  setCount(baldCountEl, snapshot.exists() ? snapshot.val() : 0);
-});
+  baldRef.on("value", (snapshot) => {
+    setCount(baldCountEl, snapshot.exists() ? snapshot.val() : 0);
+  });
 
-// Increment atomically on click
-document.querySelectorAll(".vote-column").forEach(col => {
-  col.addEventListener("click", () => {
-    const ref = col.dataset.option === "poison" ? poisonRef : baldRef;
+  // Increment atomically on click
+  document.querySelectorAll(".vote-column").forEach(col => {
+    col.addEventListener("click", () => {
+      const ref = col.dataset.option === "poison" ? poisonRef : baldRef;
 
-    ref.transaction(current => (current || 0) + 1);
+      ref.transaction(current => (current || 0) + 1);
 
-    // subtle pop animation when clicked
-    col.classList.remove("voted");
-    void col.offsetWidth; // force reflow to restart animation
-    col.classList.add("voted");
+      // subtle pop animation when clicked
+      col.classList.remove("voted");
+      void col.offsetWidth; // force reflow to restart animation
+      col.classList.add("voted");
+    });
   });
 });
