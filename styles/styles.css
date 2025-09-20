@@ -105,7 +105,7 @@ h2 { font-size: 1.5rem; margin: 0; }
 }
 
 /* Countdown */
-#countdown {
+/*#countdown {
   display: flex;
   gap: 0.5rem;
   margin: 1rem 0;
@@ -132,7 +132,7 @@ h2 { font-size: 1.5rem; margin: 0; }
   font-size: 0.75rem;
   margin-top: 0.2rem;
   line-height: 1;
-}
+}*/
 
 /* Footer */
 footer {
@@ -222,7 +222,7 @@ footer {
 #vote-section {
   position: relative;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   padding: 0;
   text-align: center;
   font-weight: bold;
