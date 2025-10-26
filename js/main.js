@@ -1,3 +1,85 @@
+// Bald Brad Night™ — FINAL VOTE COUNT (No Firebase)
+// Final counts (edit these if your final tallies change)
+const FINAL_COUNTS = {
+  poison: 824,
+  bald: 1438
+};
+
+// Easing: easeOutQuad
+function easeOutQuad(t) { return 1 - (1 - t) * (1 - t); }
+
+// Count-up tween
+function animateCount({ el, to, duration = 900, delay = 0, formatter = n => n.toLocaleString() }) {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const startTime = performance.now() + (reduced ? 0 : delay);
+  const from = 0;
+  const delta = to - from;
+
+  // If reduced motion, jump to final immediately
+  if (reduced || duration === 0) {
+    el.textContent = formatter(to);
+    el.classList.add("visible");
+    return;
+  }
+
+  function frame(now) {
+    if (now < startTime) { requestAnimationFrame(frame); return; }
+    const t = Math.min(1, (now - startTime) / duration);
+    const v = Math.round(from + delta * easeOutQuad(t));
+    el.textContent = formatter(v);
+    if (!el.classList.contains("visible")) el.classList.add("visible");
+    if (t < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+
+function startReveal() {
+  const poisonEl = document.getElementById("poison-count");
+  const baldEl   = document.getElementById("bald-count");
+  if (!poisonEl || !baldEl) return;
+
+  // Reset to zero on load (in case HTML ships with some value)
+  poisonEl.textContent = "0";
+  baldEl.textContent   = "0";
+
+  // Stagger them a bit for drama
+  animateCount({ el: poisonEl, to: FINAL_COUNTS.poison, duration: 1000, delay: 0 });
+  animateCount({ el: baldEl,   to: FINAL_COUNTS.bald,   duration: 1000, delay: 150 });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Remove any click behavior / cursor from old voting UI
+  document.querySelectorAll(".vote-column").forEach(col => {
+    col.style.cursor = "default";
+    col.replaceWith(col.cloneNode(true)); // removes old listeners if any
+  });
+
+  const section = document.getElementById("vote-section");
+  if (!section) { startReveal(); return; }
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // If above the fold or reduced motion, start immediately
+  const rect = section.getBoundingClientRect();
+  const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if (inView || reduced) {
+    startReveal();
+  } else {
+    const io = new IntersectionObserver((entries, obs) => {
+      if (entries.some(e => e.isIntersecting)) {
+        startReveal();
+        obs.disconnect();
+      }
+    }, { threshold: 0.2 });
+    io.observe(section);
+  }
+});
+
+
+// EVERYTHING BELOW IS OLD FEATURES - COUNTDOWN & VOTING
+// JUST KEEPING FOR RECORDS AND DOCUMENTATION
+
+
 // UPDATE: VOTING IS OVER!
 // Initialize Firebase
 // const firebaseConfig = {
@@ -92,82 +174,3 @@
 //   });
 // });
 // });
-
-
-// Bald Brad Night™ — FINAL VOTE COUNT (No Firebase)
-// Final counts (edit these if your final tallies change)
-const FINAL_COUNTS = {
-  poison: 824,
-  bald: 1438
-};
-
-// Easing: easeOutQuad
-function easeOutQuad(t) { return 1 - (1 - t) * (1 - t); }
-
-// Count-up tween
-function animateCount({ el, to, duration = 900, delay = 0, formatter = n => n.toLocaleString() }) {
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const startTime = performance.now() + (reduced ? 0 : delay);
-  const from = 0;
-  const delta = to - from;
-
-  // If reduced motion, jump to final immediately
-  if (reduced || duration === 0) {
-    el.textContent = formatter(to);
-    el.classList.add("visible");
-    return;
-  }
-
-  function frame(now) {
-    if (now < startTime) { requestAnimationFrame(frame); return; }
-    const t = Math.min(1, (now - startTime) / duration);
-    const v = Math.round(from + delta * easeOutQuad(t));
-    el.textContent = formatter(v);
-    if (!el.classList.contains("visible")) el.classList.add("visible");
-    if (t < 1) requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-}
-
-function startReveal() {
-  const poisonEl = document.getElementById("poison-count");
-  const baldEl   = document.getElementById("bald-count");
-  if (!poisonEl || !baldEl) return;
-
-  // Reset to zero on load (in case HTML ships with some value)
-  poisonEl.textContent = "0";
-  baldEl.textContent   = "0";
-
-  // Stagger them a bit for drama
-  animateCount({ el: poisonEl, to: FINAL_COUNTS.poison, duration: 1000, delay: 0 });
-  animateCount({ el: baldEl,   to: FINAL_COUNTS.bald,   duration: 1000, delay: 150 });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Remove any click behavior / cursor from old voting UI
-  document.querySelectorAll(".vote-column").forEach(col => {
-    col.style.cursor = "default";
-    col.replaceWith(col.cloneNode(true)); // removes old listeners if any
-  });
-
-  const section = document.getElementById("vote-section");
-  if (!section) { startReveal(); return; }
-
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  // If above the fold or reduced motion, start immediately
-  const rect = section.getBoundingClientRect();
-  const inView = rect.top < window.innerHeight && rect.bottom > 0;
-
-  if (inView || reduced) {
-    startReveal();
-  } else {
-    const io = new IntersectionObserver((entries, obs) => {
-      if (entries.some(e => e.isIntersecting)) {
-        startReveal();
-        obs.disconnect();
-      }
-    }, { threshold: 0.2 });
-    io.observe(section);
-  }
-});
-
