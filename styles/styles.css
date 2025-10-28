@@ -246,7 +246,7 @@ footer {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  padding-top: 0.8rem;
+  padding-top: 1.25rem;
 }
 
 .vote-column {
